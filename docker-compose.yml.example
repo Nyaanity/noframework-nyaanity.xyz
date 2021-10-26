@@ -1,0 +1,72 @@
+version: '3.1'
+
+services:
+  web:
+    build: .
+    hostname: website
+    restart: always
+    environment:
+      DB_HOST: localhost
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_DATABASE: website
+      DB_CONNECTION_LIMIT: 5
+    networks:
+      - proxy
+
+  proxy:
+    image: 'jc21/nginx-proxy-manager:2.9.8'
+    hostname: proxy
+    restart: always
+    container_name: proxy
+    hostname: proxy
+    ports:
+      # Public HTTP Port:
+      - '80:80'
+      # Public HTTPS Port:
+      - '443:443'
+      # Admin Web Port:
+      - '81:81'
+    environment:
+      # These are the settings to access your db
+      # If you would rather use Sqlite uncomment this
+      # and remove all DB_MYSQL_* lines above
+      DB_SQLITE_FILE: "/data/database.sqlite"
+      # Uncomment this if IPv6 is not enabled on your host
+      #DISABLE_IPV6: 'true'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - proxy
+
+  database:
+    image: mariadb
+    restart: always
+    hostname: database
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MARIADB_DATABASE: website
+
+  portainer:
+    image: portainer/portainer-ce:2.6.3
+    command: -H unix:///var/run/docker.sock
+    networks: 
+      - proxy
+    hostname: portainer 
+    container_name: portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+#    ports:
+#      - 9000:9000
+#      - 8000:8000
+networks:
+  proxy:
+    external: true
+
+volumes:
+  portainer_data:
+    external: true
