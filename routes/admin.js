@@ -6,8 +6,7 @@ router.get('/keys/new', (req, res) => {
     console.log('hi');
     if(req.query.admin == 'oZp$nv!EzVSHqfTVZ2znEMC@5k^*XouEePk$*BZaxWB6P@qr!a'){
         await pool.query('INSERT INTO authkeys(name) VALUES(?)', [req.query.name])
-        res.status(200).redirect('/')
-        return
+        return res.status(200).redirect('/')
     }
     res.status(401).send('Unauthorized.')
 })

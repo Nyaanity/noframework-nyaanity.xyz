@@ -19,7 +19,6 @@ pool.query(`CREATE TABLE IF NOT EXISTS auth(
     apiKey TEXT,
         PRIMARY KEY (id))`);
         
-pool.query('DROP TABLE authkeys')
 pool.query(`CREATE TABLE IF NOT EXISTS authkeys(
     id MEDIUMINT NOT NULL AUTO_INCREMENT,
     name TEXT,
@@ -27,6 +26,6 @@ pool.query(`CREATE TABLE IF NOT EXISTS authkeys(
     endsAt TIMESTAMP,
     PRIMARY KEY (id))`);
 
-console.log('Connected to ' + process.env.DB_DATABASE);
+console.log('Connected to database: ' + process.env.DB_DATABASE);
 
 exports.pool = pool;
