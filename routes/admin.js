@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router()
 const pool = require('../database').pool;
 
+// .
+
 router.get('/newkey', (req, res) => {
     console.log('hi');
     if(req.query.admin == 'oZp$nv!EzVSHqfTVZ2znEMC@5k^*XouEePk$*BZaxWB6P@qr!a'){
