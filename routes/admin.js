@@ -5,7 +5,6 @@ const pool = require('../database').pool;
 // .
 
 router.get('/newkey', (req, res) => {
-    console.log('hi');
     if(req.query.admin == 'oZp$nv!EzVSHqfTVZ2znEMC@5k^*XouEePk$*BZaxWB6P@qr!a'){
         await pool.query('INSERT INTO authkeys(name, endsAt) VALUES(?,?)', [req.query.name, 0])
         return res.status(200).redirect('/')
