@@ -1,5 +1,7 @@
 FROM node:latest
 
+COPY .env .env
+
 WORKDIR /app
 COPY package*.json ./
 RUN npm install

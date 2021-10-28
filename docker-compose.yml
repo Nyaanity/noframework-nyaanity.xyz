@@ -25,7 +25,3 @@ services:
 networks:
   proxy:
     external: true
-
-volumes:
-  portainer_data:
-    external: true
