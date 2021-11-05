@@ -13,6 +13,7 @@ services:
       DB_DATABASE: website
       DB_CONNECTION_LIMIT: 5
     networks:
+      - nya
       - proxy
 
   database:
@@ -22,6 +23,10 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MARIADB_DATABASE: website
+    networks:
+      - nya
 networks:
   proxy:
     external: true
+  nya:
+
