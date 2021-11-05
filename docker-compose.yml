@@ -6,7 +6,7 @@ services:
     hostname: website
     restart: always
     environment:
-      DB_HOST: database
+      DB_HOST: server ip
       DB_PORT: 3306
       DB_USER: root
       DB_PASSWORD: password
@@ -14,14 +14,6 @@ services:
       DB_CONNECTION_LIMIT: 5
     networks:
       - proxy
-
-  database:
-    image: mariadb
-    restart: always
-    hostname: database
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MARIADB_DATABASE: website
 networks:
   proxy:
     external: true
