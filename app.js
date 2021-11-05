@@ -32,6 +32,6 @@ app.use('/auth', require('./routes/auth'));
 app.use('/api', require('./routes/api'));
 app.use('/admin', require('./routes/admin'));
 
-app.listen(80, () => {
+app.listen(5656, () => {
     console.log('Server started on port 80');
 });
