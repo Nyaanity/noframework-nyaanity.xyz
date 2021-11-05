@@ -13,7 +13,9 @@ services:
       DB_DATABASE: website
       DB_CONNECTION_LIMIT: 5
     networks:
+      - nya
       - proxy
 networks:
   proxy:
     external: true
+  nya:
