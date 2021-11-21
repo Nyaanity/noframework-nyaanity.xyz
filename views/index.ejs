@@ -53,14 +53,14 @@
 			<span class="block sm:inline">You're not logged in.</span>
 			<span class="absolute top-0 bottom-0 right-0 px-4 py-3">
 		</div>
-		<% } else if(user) { %>
-			<div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 rounded absolute bottom-0 left-0 mb-5"
-				role="alert">
-				<p class="font-bold">Signed in as UID: <%- user.uid %>
-				</p>
-			</div>
-			<% } %>
-				<%- include('./includes/footer.ejs') %>
+	<% } else if(user) { %>
+		<div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 rounded absolute bottom-0 left-0 mb-5"
+			role="alert">
+			<p class="font-bold">Signed in as UID: <%- user.uid %>
+			</p>
+		</div>
+	<% } %>
+	<%- include('./includes/footer.ejs') %>
 </body>
 
 </html>
