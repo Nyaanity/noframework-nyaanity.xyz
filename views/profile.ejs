@@ -1,71 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('./includes/embed.ejs') %>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="icon" href="/assets/images/luna.png" />
+    <title>‎‎‏‏‎nyaanity.xyz | Profile</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<%- include('./includes/embed.ejs') %>
-		<link rel="stylesheet" href="/assets/css/main.css">
-		<link rel="icon" href="/assets/images/luna.png">
-		<title>‎‎‏‏‎nyaanity.xyz | Profile</title>
-</head>
-
-<body class="w-full h-full bg-stars bg-pink-900 bg-blend-darken ml-px mt-px">
-	<div class="title">
-		<h1 class="text-gray-800 font-default text-center h-0 font-extrabold text-4xl mt-10">
-			welcome back, <span class="animate-rbwiggle">
-				<%- user.username %>
-			</span>!
-		</h1>
-	</div>
-	<div class="user text-center mt-60 sm:mr-16 sm:ml-16 lg:ml-64 lg:mr-64 2xl:mr-96 2xl:ml-96">
-		<div class="wrapper text-white font-default border rounded-2xl">
-			<ul class="pb-3 pt-3">
-				<li>
-					<p class="text-gray-700">signed in as: <span class="font-bold text-white">
-							<%- user.username %>
-						</span></p>
-				</li>
-				<li>
-					<p class="text-gray-700">uid: <span class="font-bold text-white">
-							<%- user.uid %>
-						</span></p>
-				</li>
-				<li>
-					<p class="text-gray-700">key used: <span class="font-bold text-white">
-							<%- user.key %>
-						</span></p>
-				</li>
-				<li>
-					<% if(user.isHalted=='1' ) { %>
-						<p class="text-gray-700">halted: <span class="text-red-400 font-bold">Yes</span></p>
-						<% } else { %>
-							<p class="text-gray-700">halted: <span class="text-green-400 font-bold">No</span></p>
-							<% } %>
-				</li>
-				<li>
-					<p class="text-gray-700">created at: <span class="text-white font-bold">
-							<%- (user.createdAt).replace('T',' ').split(' .')[0] %>
-						</span></p>
-				</li>
-				<li class="mt-10">
-					<p hidden id="apiKey">
-						<%- user.apiKey %>
-					</p>
-					<p class="text-gray-700">show api key: <button onclick="alertKey()"><img
-								src="/assets/images/clipboard.png" alt="Copy" class="w-6 inline"></button></p>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<% include('./includes/footer.ejs'); %>
-		<script>
-			function alertKey() {
-				var element = document.getElementById('apiKey').innerHTML;
-				prompt("Use STRG+C to copy your API key.", element);
-			}
-		</script>
-		<%- include('./includes/footer.ejs') %>
-</body>
-
+  <body class="w-full h-full bg-stars bg-pink-900 bg-blend-darken ml-px mt-px">
+    <div class="title">
+      <h1
+        class="
+          text-gray-800
+          font-default
+          text-center
+          h-0
+          font-extrabold
+          text-4xl
+          mt-10
+        "
+      >
+        welcome back,
+        <span class="animate-rbwiggle"> <%- user.username %> </span>!
+      </h1>
+    </div>
+    <div
+      class="
+        user
+        text-center
+        mt-60
+        sm:mr-16 sm:ml-16
+        lg:ml-64 lg:mr-64
+        2xl:mr-96 2xl:ml-96
+      "
+    >
+      <div class="wrapper text-white font-default border rounded-2xl">
+        <ul class="pb-3 pt-3">
+          <li>
+            <p class="text-gray-700">
+              signed in as:
+              <span class="font-bold text-white"> <%- user.username %> </span>
+            </p>
+          </li>
+          <li>
+            <p class="text-gray-700">
+              uid: <span class="font-bold text-white"> <%- user.uid %> </span>
+            </p>
+          </li>
+          <li>
+            <p class="text-gray-700">
+              key used:
+              <span class="font-bold text-white"> <%- user.key %> </span>
+            </p>
+          </li>
+          <li>
+            <% if(user.isHalted=='1' ) { %>
+            <p class="text-gray-700">
+              halted: <span class="text-red-400 font-bold">Yes</span>
+            </p>
+            <% } else { %>
+            <p class="text-gray-700">
+              halted: <span class="text-green-400 font-bold">No</span>
+            </p>
+            <% } %>
+          </li>
+          <li>
+            <p class="text-gray-700">
+              created at:
+              <span class="text-white font-bold">
+                <%- (user.createdAt).replace('T',' ').split(' .')[0] %>
+              </span>
+            </p>
+          </li>
+          <li class="mt-10">
+            <p hidden id="apiKey"><%- user.apiKey %></p>
+            <p class="text-gray-700">
+              show api key:
+              <button onclick="alertKey()">
+                <img
+                  src="/assets/images/clipboard.png"
+                  alt="Copy"
+                  class="w-6 inline"
+                />
+              </button>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <% include('./includes/footer.ejs'); %>
+    <script>
+      function alertKey() {
+        var element = document.getElementById("apiKey").innerHTML;
+        prompt("Use STRG+C to copy your API key.", element);
+      }
+    </script>
+    <%- include('./includes/footer.ejs') %>
+  </body>
 </html>

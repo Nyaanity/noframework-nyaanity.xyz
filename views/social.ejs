@@ -1,57 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('./includes/embed.ejs') %>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="icon" href="/assets/images/luna.png" />
+    <title>‎‎‏‏‎nyaanity.xyz | Social</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<%- include('./includes/embed.ejs') %>
-		<link rel="stylesheet" href="/assets/css/main.css">
-		<link rel="icon" href="/assets/images/luna.png">
-		<title>‎‎‏‏‎nyaanity.xyz | Social</title>
-</head>
-
-<body class="w-full h-full bg-stars bg-pink-900 bg-blend-darken ml-px mt-px">
-	<div class="title">
-		<h1 class="animate-rbwiggle font-default text-center h-0 font-extrabold text-4xl mt-10">
-			socials
-		</h1>
-	</div>
-	<div class="socials mt-32 ml-20 text-white">
-		<ul class="listitems font-default">
-			<li class='listitem-discord mb-10'>
-				<a href="https://discord.com/users/381843366683344897" target="_blank">
-					<img src="/assets/images/discord.webp" alt="discord" class="w-12 inline">
-					<p class="inline ml-5 animate-pulse">Nyaanity</p><span class="text-gray-700">#</span><span
-						class="font-bold">0702</span>
-				</a>
-			</li>
-			<li class='listitem-github mb-10'>
-				<a href="https://github.com/Nyaanity" target="_blank">
-					<img src="/assets/images/github.png" alt="github" class="w-12 inline">
-					<p class="inline ml-5 animate-pulse">Nyaanity</p>
-				</a>
-			</li>
-			<li class='listitem-spotify mb-10'>
-				<a href="https://open.spotify.com/user/xul9zpf1d0yfcecz08tg0ujqb" target="_blank">
-					<img src="/assets/images/spotify.png" alt="spotify" class="w-12 inline">
-					<p class="inline ml-5 animate-pulse">Nyaanity</p>
-				</a>
-			</li>
-			<li class='listitem-youtube mb-10'>
-				<a href="https://www.youtube.com/channel/UCbcXgITSRHX8GBvYwgYnsBQ" target="_blank">
-					<img src="/assets/images/youtube.webp" alt="youtube" class="w-12 inline">
-					<p class="inline ml-5 animate-pulse">Nyaanity</p>
-				</a>
-			</li>
-			<li class='listitem-steam mb-10'>
-				<a href="https://steamcommunity.com/profiles/76561199073132673" target="_blank">
-					<img src="/assets/images/steam.webp" alt="steam" class="w-12 inline">
-					<p class="inline ml-5 animate-pulse">Nyaanity</p>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<%- include('./includes/footer.ejs') %>
-</body>
-
+  <body class="w-full h-full bg-stars bg-pink-900 bg-blend-darken ml-px mt-px">
+    <div class="title">
+      <h1
+        class="
+          animate-rbwiggle
+          font-default
+          text-center
+          h-0
+          font-extrabold
+          text-4xl
+          mt-10
+        "
+      >
+        socials
+      </h1>
+    </div>
+    <div class="socials mt-32 ml-20 text-white">
+      <ul class="listitems font-default">
+        <li class="listitem-discord mb-10">
+          <a
+            href="https://discord.com/users/381843366683344897"
+            target="_blank"
+          >
+            <img
+              src="/assets/images/discord.webp"
+              alt="discord"
+              class="w-12 inline"
+            />
+            <p class="inline ml-5 animate-pulse">Nyaanity</p>
+            <span class="text-gray-700">#</span
+            ><span class="font-bold">0702</span>
+          </a>
+        </li>
+        <li class="listitem-github mb-10">
+          <a href="https://github.com/Nyaanity" target="_blank">
+            <img
+              src="/assets/images/github.png"
+              alt="github"
+              class="w-12 inline"
+            />
+            <p class="inline ml-5 animate-pulse">Nyaanity</p>
+          </a>
+        </li>
+        <li class="listitem-spotify mb-10">
+          <a
+            href="https://open.spotify.com/user/xul9zpf1d0yfcecz08tg0ujqb"
+            target="_blank"
+          >
+            <img
+              src="/assets/images/spotify.png"
+              alt="spotify"
+              class="w-12 inline"
+            />
+            <p class="inline ml-5 animate-pulse">Nyaanity</p>
+          </a>
+        </li>
+        <li class="listitem-youtube mb-10">
+          <a
+            href="https://www.youtube.com/channel/UCbcXgITSRHX8GBvYwgYnsBQ"
+            target="_blank"
+          >
+            <img
+              src="/assets/images/youtube.webp"
+              alt="youtube"
+              class="w-12 inline"
+            />
+            <p class="inline ml-5 animate-pulse">Nyaanity</p>
+          </a>
+        </li>
+        <li class="listitem-steam mb-10">
+          <a
+            href="https://steamcommunity.com/profiles/76561199073132673"
+            target="_blank"
+          >
+            <img
+              src="/assets/images/steam.webp"
+              alt="steam"
+              class="w-12 inline"
+            />
+            <p class="inline ml-5 animate-pulse">Nyaanity</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <%- include('./includes/footer.ejs') %>
+  </body>
 </html>
