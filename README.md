@@ -1,2 +1,2 @@
 # nyaanity.one
-First website attempt. ;w;
+First website attempt '^'
