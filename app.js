@@ -2,7 +2,7 @@ const express = require('express');
 const { resolveInclude } = require('ejs');
 const app = express();
 const session = require('express-session');
-// Newt was here HAHAHHAH
+
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
