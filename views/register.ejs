@@ -2,61 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('./includes/embed.ejs') %> 
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="icon" href="/assets/images/luna.png">
-    <title>‎‎‏‏‎nyaanity.xyz | Register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<%- include('./includes/embed.ejs') %>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<link rel="icon" href="/assets/images/luna.png">
+		<title>‎‎‏‏‎nyaanity.xyz | Register</title>
 </head>
 
 <body class="w-full h-full bg-stars bg-pink-900 bg-blend-darken ml-px mt-px">
-    <div class="title">
-        <h1 class="animate-rbwiggle font-default text-center h-0 font-extrabold text-4xl mt-10">
-            register
-        </h1>
-    </div>
-    <div class="register-part mt-60">
-        <div class="wrapper text-center">
-            <form action="/auth/register" method="POST">
-                <div class="frmgroup">
-                    <label for="username"></label>
-                    <input type="text" name="username" placeholder="username" class="text-center font-default bg-black text-gray-400 rounded-2xl border border-gray-800" required>
-                </div>
-                <div class="frmgroup mt-5">
-                    <label for="password"></label>
-                    <input type="password" name="password" placeholder="password" class="text-center font-default bg-black text-gray-400 rounded-2xl border border-gray-800" required>
-                </div>
-                <div class="frmgroup mt-5">
-                    <label for="passwordConfirm"></label>
-                    <input type="password" name="passwordConfirm" placeholder="confirm password" class="text-center font-default bg-black text-gray-400 rounded-2xl border border-gray-800" required>
-                </div>
-                <div class="frmgroup mt-5">
-                    <label for="key"></label>
-                    <input type="text" name="key" placeholder="key" class="text-center font-default bg-black text-gray-400 rounded-2xl border border-gray-800" required>
-                </div>
-                <button type="submit" name="submit" class="text-center font-default mt-6 pl-2 pr-2 text-gray-400 rounded-2xl border border-gray-800">sign in</button>
-        </div>
+	<div class="title">
+		<h1 class="animate-rbwiggle font-default text-center h-0 font-extrabold text-4xl mt-10">
+			register
+		</h1>
+	</div>
+	<div class="register-part mt-60">
+		<div class="wrapper text-center">
+			<form action="/auth/register" method="POST">
+				<div class="frmgroup">
+					<label for="username"></label>
+					<input type="text" name="username" placeholder="username"
+						class="text-center font-default bg-black text-gray-400 rounded-2xl border border-gray-800"
+						required>
+				</div>
+				<div class="frmgroup mt-5">
+					<label for="password"></label>
+					<input type="password" name="password" placeholder="password"
+						class="text-center font-default bg-black text-gray-400 rounded-2xl border border-gray-800"
+						required>
+				</div>
+				<div class="frmgroup mt-5">
+					<label for="passwordConfirm"></label>
+					<input type="password" name="passwordConfirm" placeholder="confirm password"
+						class="text-center font-default bg-black text-gray-400 rounded-2xl border border-gray-800"
+						required>
+				</div>
+				<div class="frmgroup mt-5">
+					<label for="key"></label>
+					<input type="text" name="key" placeholder="key"
+						class="text-center font-default bg-black text-gray-400 rounded-2xl border border-gray-800"
+						required>
+				</div>
+				<button type="submit" name="submit"
+					class="text-center font-default mt-6 pl-2 pr-2 text-gray-400 rounded-2xl border border-gray-800">sign
+					in</button>
+		</div>
 
-        <% if(ERR_PASSWORDS_NOT_MATCHING) {%>
-            <div class="errorbox bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded absolute bottom-0 left-0 mb-5 animate-pulse">
-                <span class="block sm:inline"><%- ERR_PASSWORDS_NOT_MATCHING %></span>
-                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-            </div>
-        <% } %>
-        <% if(ERR_USERNAME_IN_USE) { %> 
-            <div class="errorbox bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded absolute bottom-0 left-0 mb-5 animate-pulse">
-                <span class="block sm:inline"><%- ERR_USERNAME_IN_USE %></span>
-                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-            </div>
-        <% } %> 
-        <% if(ERR_INVALID_KEY) { %> 
-            <div class="errorbox bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded absolute bottom-0 left-0 mb-5 animate-pulse">
-                <span class="block sm:inline"><%- ERR_INVALID_KEY %></span>
-                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-            </div>
-        <% } %>
-    </div>
-    <%- include('./includes/footer.ejs') %>
+		<% if(ERR_PASSWORDS_NOT_MATCHING) {%>
+			<div
+				class="errorbox bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded absolute bottom-0 left-0 mb-5 animate-pulse">
+				<span class="block sm:inline">
+					<%- ERR_PASSWORDS_NOT_MATCHING %>
+				</span>
+				<span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+			</div>
+			<% } %>
+				<% if(ERR_USERNAME_IN_USE) { %>
+					<div
+						class="errorbox bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded absolute bottom-0 left-0 mb-5 animate-pulse">
+						<span class="block sm:inline">
+							<%- ERR_USERNAME_IN_USE %>
+						</span>
+						<span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+					</div>
+					<% } %>
+						<% if(ERR_INVALID_KEY) { %>
+							<div
+								class="errorbox bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded absolute bottom-0 left-0 mb-5 animate-pulse">
+								<span class="block sm:inline">
+									<%- ERR_INVALID_KEY %>
+								</span>
+								<span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+							</div>
+							<% } %>
+	</div>
+	<%- include('./includes/footer.ejs') %>
 </body>
+
 </html>

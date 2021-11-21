@@ -2,60 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('./includes/embed.ejs') %> 
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="icon" href="/assets/images/luna.png">
-    <title>‎‎‏‏‎nyaanity.xyz | Home</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<%- include('./includes/embed.ejs') %>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<link rel="icon" href="/assets/images/luna.png">
+		<title>‎‎‏‏‎nyaanity.xyz | Home</title>
 </head>
 
 <body class="w-full h-full bg-stars bg-pink-900 bg-blend-darken ml-px mt-px">
-    <div class="title">
-        <h1 class="animate-rbwiggle font-default text-center h-0 font-extrabold text-4xl mt-10 pr-12">
-            nyaanity.xyz
-        </h1>
-    </div>
-    <div class="navbar absolute top-0 right-0 mr-px mt-px ml-10">
-        <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-3 bg-black w-20 box-border block border-2 ring-1 ring-indigo-300">
-            <ul class="animate-pulse">
-                <li class="mb-14 mt-14 ml-2 w-10">
-                    <a href="/aboutme"><img src="/assets/images/luna.png" alt="about me"></a>
-                </li>
-                <li class="mb-14 mt-14 ml-2 w-10">
-                    <a href="/api"><img src="/assets/images/code.png" alt="api"></a>
-                </li>
-                <% if(!user) { %>
-                    <li class="mb-14 mt-14 ml-2 w-10">
-                        <a href="/login"><img src="/assets/images/login.png" alt="login"></a>
-                    </li>
-                    <li class="mb-14 mt-14 ml-2 w-10">
-                        <a href="/register"><img src="/assets/images/register.png" alt="register"></a>
-                    </li>
-                <% } else { %>
-                    <li class="mb-14 mt-14 ml-2 w-10">
-                        <a href="/auth/logout"><img src="/assets/images/logout.png" alt="logout"></a>
-                    </li>
-                    <li class="mb-14 mt-14 ml-2 w-10">
-                        <a href="/profile"><img src="/assets/images/login.png" alt="profile"></a>
-                    </li>
-                <% } %>
-                <li class="mb-14 mt-14 ml-2 w-10">
-                    <a href="/social"><img src="/assets/images/discord-blank.png" alt="social"></a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <% if(!user) { %>
-        <div class="errorbox bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded absolute bottom-0 left-0 mb-5 animate-pulse">
-            <span class="block sm:inline">You're not logged in.</span>
-            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-        </div>
-    <% } else if(user) { %>
-        <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 rounded absolute bottom-0 left-0 mb-5" role="alert">
-            <p class="font-bold">Signed in as UID: <%- user.uid %> </p>
-        </div>
-    <% } %>
-    <%- include('./includes/footer.ejs') %> 
+	<div class="title">
+		<h1 class="animate-rbwiggle font-default text-center h-0 font-extrabold text-4xl mt-10 pr-12">
+			nyaanity.xyz
+		</h1>
+	</div>
+	<div class="navbar absolute top-0 right-0 mr-px mt-px ml-10">
+		<nav
+			class="flex items-center justify-between flex-wrap bg-teal-500 p-3 bg-black w-20 box-border block border-2 ring-1 ring-indigo-300">
+			<ul class="animate-pulse">
+				<li class="mb-14 mt-14 ml-2 w-10">
+					<a href="/aboutme"><img src="/assets/images/luna.png" alt="about me"></a>
+				</li>
+				<li class="mb-14 mt-14 ml-2 w-10">
+					<a href="/api"><img src="/assets/images/code.png" alt="api"></a>
+				</li>
+				<% if(!user) { %>
+					<li class="mb-14 mt-14 ml-2 w-10">
+						<a href="/login"><img src="/assets/images/login.png" alt="login"></a>
+					</li>
+					<li class="mb-14 mt-14 ml-2 w-10">
+						<a href="/register"><img src="/assets/images/register.png" alt="register"></a>
+					</li>
+					<% } else { %>
+						<li class="mb-14 mt-14 ml-2 w-10">
+							<a href="/auth/logout"><img src="/assets/images/logout.png" alt="logout"></a>
+						</li>
+						<li class="mb-14 mt-14 ml-2 w-10">
+							<a href="/profile"><img src="/assets/images/login.png" alt="profile"></a>
+						</li>
+						<% } %>
+							<li class="mb-14 mt-14 ml-2 w-10">
+								<a href="/social"><img src="/assets/images/discord-blank.png" alt="social"></a>
+							</li>
+			</ul>
+		</nav>
+	</div>
+	<% if(!user) { %>
+		<div
+			class="errorbox bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded absolute bottom-0 left-0 mb-5 animate-pulse">
+			<span class="block sm:inline">You're not logged in.</span>
+			<span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+		</div>
+		<% } else if(user) { %>
+			<div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 rounded absolute bottom-0 left-0 mb-5"
+				role="alert">
+				<p class="font-bold">Signed in as UID: <%- user.uid %>
+				</p>
+			</div>
+			<% } %>
+				<%- include('./includes/footer.ejs') %>
 </body>
+
 </html>
